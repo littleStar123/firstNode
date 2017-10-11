@@ -1,0 +1,30 @@
+{
+	"users": [
+		{
+			"name": "mahesh",
+			"password": "password1",
+			"profession": "teacher",
+			"id": 1
+		}, {
+			"name": "ramesh",
+			"password": "password3",
+			"profession": "clerk",
+			"id": 3
+		}, {
+			"name": "mohit",
+			"password": "password4",
+			"profession": "teacher",
+			"id": 4
+		}, {
+			"name": "1",
+			"password": "1",
+			"profession": "1",
+			"id": 5
+		}, {
+			"name": "2",
+			"password": "3",
+			"profession": "4",
+			"id": 6
+		}
+	]
+}

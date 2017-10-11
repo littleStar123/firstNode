@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>simple</title>
+	</head>
+	<style type="text/css">
+		#userTable td{
+			border: 1px solid #666;
+			padding: 5px;
+		}
+		#userTable {
+			border-collapse: collapse;
+		}
+	</style>
+	<body>
+		<table id="userTable" cellspacing="0">
+			<tr>
+				<td>name</td>
+				<td>password</td>
+				<td>profession</td>
+			</tr>
+		</table>
+		<form action="http://127.0.0.1:8081/addUser" method="GET">
+			name: <input type="text" name="name" /><br />
+			password: <input type="text" name="password"/><br />
+			profession: <input type="text" name="profession"/><br />
+			<button type="submit">submit</button>
+		</form>
+	</body>
+	<script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script>
+		var data=$.ajax({url:"/listData",async:false});
+		var dataList=JSON.parse(data.responseText).users;
+		var userTable=document.getElementById("userTable");
+		for(var i = 0 ;i<dataList.length;++i){
+			var tr=cTr(dataList[i]);
+			userTable.appendChild(tr);
+		}
+		function cTr(trData){
+			var tr=document.createElement("tr");
+			var tdName=cTd(trData.name);
+			var tdPassword=cTd(trData.password);
+			var tdProfession=cTd(trData.profession);
+			tr.appendChild(tdName);
+			tr.appendChild(tdPassword);
+			tr.appendChild(tdProfession);
+			return tr;
+		}
+		function cTd(data){
+			var td=document.createElement("td");
+			td.innerText=data;
+			return td
+		}
+	</script>
+</html>
