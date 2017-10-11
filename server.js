@@ -102,6 +102,28 @@ app.get('/deleteUser', function(req, res) {
 		res.end(JSON.stringify(data));
 	});
 })
+var multer  = require('multer');
+app.use(multer({ dest: '/tmp/'}).array('file'));
+app.post('/file_upload',urlencodedParser, function (req, res) {
+	console.log(req.files)
+   console.log(req.files[0]);  // 上传的文件信息
+   var des_file = __dirname + "/uploadFile/" + req.files[0].originalname;
+   console.log(des_file)
+   fs.readFile( req.files[0].path, function (err, data) {
+        fs.writeFile(des_file, data, function (err) {
+         if( err ){
+              console.log( err );
+         }else{
+               response = {
+                   message:'File uploaded successfully', 
+                   filename:req.files[0].originalname,
+              };
+         }
+          console.log( response );
+          res.end( JSON.stringify( response ) );
+       });
+   });
+})
 
 app.get('/:id', function(req, res) { //放最后，不然后面的就获取不到
 	// 首先我们读取已存在的用户
