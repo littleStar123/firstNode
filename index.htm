@@ -21,7 +21,13 @@
 				<td>profession</td>
 			</tr>
 		</table>
-		<form action="http://127.0.0.1:8081/addUser" method="GET">
+		<form action="http://127.0.0.1:8081/addUser_g" method="GET">
+			name: <input type="text" name="name" /><br />
+			password: <input type="text" name="password"/><br />
+			profession: <input type="text" name="profession"/><br />
+			<button type="submit">submit</button>
+		</form>
+		<form action="http://127.0.0.1:8081/addUser_p" method="POST">
 			name: <input type="text" name="name" /><br />
 			password: <input type="text" name="password"/><br />
 			profession: <input type="text" name="profession"/><br />

@@ -6,6 +6,11 @@
 			"profession": "teacher",
 			"id": 1
 		}, {
+			"name": "ramesh2",
+			"password": "password2",
+			"profession": "clerk",
+			"id": 2
+		}, {
 			"name": "ramesh",
 			"password": "password3",
 			"profession": "clerk",
@@ -25,6 +30,11 @@
 			"password": "3",
 			"profession": "4",
 			"id": 6
+		}, {
+			"name": "post1",
+			"password": "2",
+			"profession": "3",
+			"id": 7
 		}
 	]
 }
